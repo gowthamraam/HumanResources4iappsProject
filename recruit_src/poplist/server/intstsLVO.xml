@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="intstsLVO"
+   BindingStyle="OracleName"
+   CustomQuery="true"
+   RowClass="oracle.apps.fnd.framework.server.OAViewRowImpl"
+   ComponentClass="xxhlp.oracle.apps.xxhlp.recruit.poplist.server.intstsLVOImpl"
+   UseGlueCode="false" >
+   <SQLQuery><![CDATA[
+select 'T' Int_Status, 'Tested' Int_Status_Desc, 1 Seq from dual union
+select 'NT', 'Not Tested', 2 Seq from dual union
+select 'I', 'Interviewed', 3 Seq from dual union
+select 'NI', 'Not Interviewed', 4 Seq from dual union
+select 'TI', 'Tested and Interviewed', 5 Seq from dual union
+select 'TNI', 'Tested but not Interviewed', 6 Seq from dual union
+select 'NTNI', 'Not Tested and Not Interviewed', 7 Seq from dual
+order by Seq
+   ]]></SQLQuery>
+   <DesignTime>
+      <Attr Name="_isExpertMode" Value="true" />
+      <Attr Name="_version" Value="10.1.3.41.57" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess" />
+   </DesignTime>
+   <ViewAttribute
+      Name="IntStatus"
+      IsPersistent="false"
+      Precision="4"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="INT_STATUS"
+      Expression="INT_STATUS"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="4" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="IntStatusDesc"
+      IsPersistent="false"
+      Precision="30"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="INT_STATUS_DESC"
+      Expression="INT_STATUS_DESC"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Seq"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      AliasName="SEQ"
+      Expression="SEQ"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+</ViewObject>

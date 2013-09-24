@@ -1,0 +1,259 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<page xmlns:jrad="http://xmlns.oracle.com/jrad" xmlns:oa="http://xmlns.oracle.com/oa" xmlns:ui="http://xmlns.oracle.com/uix/ui" version="10.1.3_1312" xml:lang="en-US" xmlns:user="http://xmlns.oracle.com/jrad/user" xmlns="http://xmlns.oracle.com/jrad" file-version="$Header$">
+   <content>
+      <oa:pageLayout id="PageLayoutRN" amDefName="xxhlp.oracle.apps.xxhlp.recruit.server.applAM" windowTitle="Recruitment" title="Applicants" controllerClass="xxhlp.oracle.apps.xxhlp.recruit.webui.QryCO">
+         <ui:corporateBranding>
+            <oa:image id="corporateBrandingImage" source="/OA_MEDIA/FNDSSCORP.gif"/>
+         </ui:corporateBranding>
+         <ui:contents>
+            <oa:header id="HeaderRN">
+               <ui:contents>
+                  <oa:header id="QueryRN" text="Search">
+                     <ui:contents>
+                        <oa:rowLayout id="row01" hAlign="left" vAlign="top" width="100%">
+                           <ui:contents>
+                              <oa:cellFormat id="cell0101" hAlign="left" vAlign="top" width="45%">
+                                 <ui:contents>
+                                    <oa:defaultDoubleColumn id="QGeneral" text="General">
+                                       <ui:contents>
+                                          <oa:messageTextInput id="qrefnum" columns="15" prompt="Reference Number"/>
+                                          <oa:messageTextInput id="qappname" columns="30" prompt="Name"/>
+                                          <oa:messageTextInput id="qidnum" columns="15" prompt="ID Number"/>
+                                          <oa:messageTextInput id="qcontactnum" columns="15" prompt="Contact Number"/>
+                                          <oa:messageChoice id="qgender" prompt="Gender" pickListViewName="genderLVO" pickListDispAttr="GenderDesc" pickListValAttr="Gender"/>
+                                          <oa:messageChoice id="qregion" prompt="Region" pickListViewName="regionLVO" pickListDispAttr="RegionDesc" pickListValAttr="Region"/>
+                                          <oa:messageTextInput id="qagefrom" columns="5" prompt="Age From" dataType="NUMBER" maximumLength="2"/>
+                                          <oa:messageTextInput id="qageto" columns="5" prompt="Age Upto" dataType="NUMBER" maximumLength="2"/>
+                                          <oa:messageChoice id="qposappl" prompt="Position Applied" pickListViewName="posapplLVO" pickListDispAttr="PosApplDesc" pickListValAttr="PosAppl" rendered="false"/>
+                                       </ui:contents>
+                                    </oa:defaultDoubleColumn>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                              <oa:cellFormat id="cell0102" hAlign="left" vAlign="top" width="10%"/>
+                              <oa:cellFormat id="cell0103" hAlign="left" vAlign="top" width="45%">
+                                 <ui:contents>
+                                    <oa:defaultDoubleColumn id="QStatus" text="Status">
+                                       <ui:contents>
+                                          <oa:messageTextInput id="qrcvdfrom" columns="10" prompt="CV Received From" dataType="DATE"/>
+                                          <oa:messageTextInput id="qrcvdto" columns="10" prompt="To" dataType="DATE"/>
+                                          <oa:messageTextInput id="qcrfrom" columns="10" prompt="CV Created From" dataType="DATE"/>
+                                          <oa:messageTextInput id="qcrto" columns="10" prompt="To" dataType="DATE"/>
+                                          <oa:messageChoice id="qstatus" prompt="Status" pickListViewName="appstsLVO" pickListDispAttr="AppstsDesc" pickListValAttr="Appsts"/>
+                                          <oa:messageChoice id="qropyn" prompt="ROP Certificate?" defaultValue="Yes" pickListViewName="yesnoLVO" pickListDispAttr="YnDesc" pickListValAttr="Yn"/>
+                                          <oa:messageChoice id="qmedyn" prompt="Medical Done?" defaultValue="Yes" pickListViewName="yesnoLVO" pickListDispAttr="YnDesc" pickListValAttr="Yn"/>
+                                          <oa:messageChoice id="qemployed" prompt="Employed?" defaultValue="Yes" pickListViewName="yesnoLVO" pickListDispAttr="YnDesc" pickListValAttr="Yn"/>
+                                          <oa:messageTextInput id="qempfrom" columns="10" prompt="Employed From" dataType="DATE"/>
+                                          <oa:messageTextInput id="qempto" columns="10" prompt="To" dataType="DATE"/>
+                                       </ui:contents>
+                                    </oa:defaultDoubleColumn>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                           </ui:contents>
+                        </oa:rowLayout>
+                        <oa:rowLayout id="row02" hAlign="left" vAlign="top" width="100%">
+                           <ui:contents>
+                              <oa:cellFormat id="cell0201" hAlign="left" vAlign="top" width="100%">
+                                 <ui:contents>
+                                    <oa:hideShowHeader id="hideshow01" text="Education">
+                                       <ui:contents>
+                                          <oa:rowLayout id="row0201">
+                                             <ui:contents>
+                                                <oa:messageComponentLayout id="QEdu" rows="1" columns="5" width="100%">
+                                                   <ui:contents>
+                                                      <oa:messageChoice id="qedutype" prompt="Type" pickListViewName="edutypeLVO" pickListDispAttr="EdutypeDesc" pickListValAttr="Edutype"/>
+                                                      <oa:messageTextInput id="qyearfm" prompt="Year From" columns="5"/>
+                                                      <oa:messageTextInput id="qyearto" prompt="To" columns="5"/>
+                                                   </ui:contents>
+                                                </oa:messageComponentLayout>
+                                             </ui:contents>
+                                          </oa:rowLayout>
+                                          <oa:rowLayout id="row0202">
+                                             <ui:contents>
+                                                <oa:cellFormat id="cell020201" hAlign="left" vAlign="top">
+                                                   <ui:contents>
+                                                      <oa:defaultSingleColumn id="cell020201a" text="Course">
+                                                         <ui:contents>
+                                                            <oa:shuttle id="QEduRN">
+                                                               <ui:leading>
+                                                                  <oa:list id="list1" pickListDispAttr="EduDesc" pickListValAttr="Edu" pickListViewName="eduLVO"/>
+                                                               </ui:leading>
+                                                               <ui:trailing>
+                                                                  <oa:list id="list2"/>
+                                                               </ui:trailing>
+                                                            </oa:shuttle>
+                                                         </ui:contents>
+                                                      </oa:defaultSingleColumn>
+                                                   </ui:contents>
+                                                </oa:cellFormat>
+                                                <oa:cellFormat id="cell020202" hAlign="left" vAlign="top">
+                                                   <ui:contents>
+                                                      <oa:defaultSingleColumn id="cell020202a" text="Subjects">
+                                                         <ui:contents>
+                                                            <oa:shuttle id="QSubjectRN">
+                                                               <ui:leading>
+                                                                  <oa:list id="list3" pickListViewName="edusubLVO" pickListDispAttr="EdusubDesc" pickListValAttr="Edusub"/>
+                                                               </ui:leading>
+                                                               <ui:trailing>
+                                                                  <oa:list id="list4"/>
+                                                               </ui:trailing>
+                                                            </oa:shuttle>
+                                                         </ui:contents>
+                                                      </oa:defaultSingleColumn>
+                                                   </ui:contents>
+                                                </oa:cellFormat>
+                                             </ui:contents>
+                                          </oa:rowLayout>
+                                       </ui:contents>
+                                    </oa:hideShowHeader>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                           </ui:contents>
+                        </oa:rowLayout>
+                        <oa:rowLayout id="row03" hAlign="left" vAlign="top" width="100%">
+                           <ui:contents>
+                              <oa:cellFormat id="cell0301" hAlign="left" vAlign="top" width="100%">
+                                 <ui:contents>
+                                    <oa:hideShowHeader id="hideshow02" text="Experience">
+                                       <ui:contents>
+                                          <oa:rowLayout id="row0301" hAlign="left" vAlign="top">
+                                             <ui:contents>
+                                                <oa:messageComponentLayout id="QExp" rows="1" columns="5" width="100%">
+                                                   <ui:contents>
+                                                      <oa:messageTextInput id="qposition" prompt="Position" columns="20"/>
+                                                      <oa:messageTextInput id="qcompany" prompt="Company" columns="25"/>
+                                                      <oa:messageTextInput id="qexpyearfm" prompt="Year From" columns="5"/>
+                                                      <oa:messageTextInput id="qexpyearto" prompt="To" columns="5"/>
+                                                   </ui:contents>
+                                                </oa:messageComponentLayout>
+                                             </ui:contents>
+                                          </oa:rowLayout>
+                                          <oa:rowLayout id="row0302" hAlign="left" vAlign="top">
+                                             <ui:contents>
+                                                <oa:defaultSingleColumn id="cell0302a" text="Type">
+                                                   <ui:contents>
+                                                      <oa:shuttle id="QExpTypeRN">
+                                                         <ui:leading>
+                                                            <oa:list id="list5" pickListViewName="exptypeLVO" pickListDispAttr="ExptypeDesc" pickListValAttr="Exptype"/>
+                                                         </ui:leading>
+                                                         <ui:trailing>
+                                                            <oa:list id="list6"/>
+                                                         </ui:trailing>
+                                                      </oa:shuttle>
+                                                   </ui:contents>
+                                                </oa:defaultSingleColumn>
+                                             </ui:contents>
+                                          </oa:rowLayout>
+                                       </ui:contents>
+                                    </oa:hideShowHeader>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                           </ui:contents>
+                        </oa:rowLayout>
+                        <oa:rowLayout id="row04" hAlign="left" vAlign="top" width="100%">
+                           <ui:contents>
+                              <oa:cellFormat id="cell0401" hAlign="left" vAlign="top" width="100%">
+                                 <ui:contents>
+                                    <oa:hideShowHeader id="hideshow03" text="Interview">
+                                       <ui:contents>
+                                          <oa:messageComponentLayout id="QInter" rows="2" columns="6" width="100%">
+                                             <ui:contents>
+                                                <oa:messageChoice id="qintyn" prompt="Interviewed?" pickListViewName="intstsLVO" pickListDispAttr="IntStatusDesc" pickListValAttr="IntStatus"/>
+                                                <oa:messageChoice id="qresult" prompt="Result" pickListViewName="intresLVO" pickListDispAttr="IntresDesc" pickListValAttr="Intres"/>
+                                                <oa:messageTextInput id="qintfm" prompt="From" dataType="DATE" columns="10"/>
+                                                <oa:messageTextInput id="qintto" prompt="To" dataType="DATE" columns="10"/>
+                                                <oa:messageTextInput id="qmarksfm" prompt="Marks From" columns="5"/>
+                                                <oa:messageTextInput id="qmarksto" prompt="To" columns="5"/>
+                                                <oa:messageTextInput id="qintby" prompt="Interviewed By" columns="25"/>
+                                             </ui:contents>
+                                          </oa:messageComponentLayout>
+                                       </ui:contents>
+                                    </oa:hideShowHeader>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                           </ui:contents>
+                        </oa:rowLayout>
+                        <oa:rowLayout id="row05" width="100%" hAlign="left" vAlign="top">
+                           <ui:contents>
+                              <oa:cellFormat id="cell0501" hAlign="left" vAlign="top" width="90%"/>
+                              <oa:cellFormat id="cell0502" hAlign="center" vAlign="middle" width="5%">
+                                 <ui:contents>
+                                    <oa:button id="qbutgo" text="Go" prompt="Go">
+                                       <ui:primaryClientAction>
+                                          <ui:firePartialAction event="QButGo" id="firePartialAction1"/>
+                                       </ui:primaryClientAction>
+                                    </oa:button>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                              <oa:cellFormat id="cell0503" hAlign="center" vAlign="middle" width="5%">
+                                 <ui:contents>
+                                    <oa:button id="qbutclear" text="Clear" use="/oracle/apps/fnd/attributesets/Buttons/ClearAll" prompt="Clear">
+                                       <ui:primaryClientAction>
+                                          <ui:firePartialAction event="QButClear"/>
+                                       </ui:primaryClientAction>
+                                    </oa:button>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                           </ui:contents>
+                        </oa:rowLayout>
+                     </ui:contents>
+                  </oa:header>
+                  <oa:header id="ResultRN" text="Applicants">
+                     <ui:contents>
+                        <oa:table id="applRN" width="100%" blockSize="25">
+                           <ui:contents>
+                              <oa:messageStyledText id="apprefnum" prompt="Reference Number" viewName="QryApplVO" viewAttr="AppRefNumber" sortState="descending"/>
+                              <oa:messageStyledText id="appname" viewName="QryApplVO" viewAttr="AppName" prompt="Name"/>
+                              <oa:messageStyledText id="cvrecon" viewName="QryApplVO" viewAttr="CvReceivedOn" prompt="Received On" dataType="DATE" sortState="yes"/>
+                              <oa:messageStyledText id="gender" viewName="QryApplVO" viewAttr="GenderDesc" prompt="Gender"/>
+                              <oa:messageStyledText id="region" viewName="QryApplVO" viewAttr="RegionDesc" prompt="Region" sortState="yes"/>
+                              <oa:messageStyledText id="city" viewName="QryApplVO" viewAttr="City" prompt="City"/>
+                              <oa:messageStyledText id="contactnum" viewName="QryApplVO" viewAttr="ContactNumber" prompt="Contact Number"/>
+                              <oa:messageStyledText id="idnum" viewName="QryApplVO" viewAttr="IdNumber" prompt="ID Number"/>
+                              <oa:messageStyledText id="appstatus" viewName="QryApplVO" viewAttr="AppStatus" prompt="App Status" rendered="false"/>
+                              <oa:messageStyledText id="appstatusdesc" viewName="QryApplVO" viewAttr="AppStatusDesc" prompt="Status" sortState="yes"/>
+                              <oa:messageStyledText id="empnum" viewName="QryApplVO" viewAttr="EmployeeNumber" prompt="Employee Number"/>
+                              <oa:messageStyledText id="employedon" viewName="QryApplVO" viewAttr="EmployedOn" prompt="Employed On"/>
+                              <oa:image id="UpdateBut" use="/oracle/apps/fnd/attributesets/Buttons/Update" source="updateicon_enabled.gif">
+                                 <ui:primaryClientAction>
+                                    <ui:fireAction event="UpdateBut" id="fireAction1">
+                                       <ui:parameters>
+                                          <ui:parameter key="QryAppId" value="${oa.QryApplVO.AppId}"/>
+                                       </ui:parameters>
+                                    </ui:fireAction>
+                                 </ui:primaryClientAction>
+                              </oa:image>
+                              <oa:image id="DeleteBut" use="/oracle/apps/fnd/attributesets/Buttons/Delete" source="deleteicon_enabled.gif" rendered="${oa.TransientVO.RenderYes}">
+                                 <ui:primaryClientAction>
+                                    <ui:fireAction event="DeleteBut" id="fireAction2">
+                                       <ui:parameters>
+                                          <ui:parameter key="QryAppId" value="${oa.QryApplVO.AppId}"/>
+                                       </ui:parameters>
+                                    </ui:fireAction>
+                                 </ui:primaryClientAction>
+                              </oa:image>
+                           </ui:contents>
+                           <ui:tableActions>
+                              <oa:flowLayout id="region6">
+                                 <ui:contents>
+                                    <oa:button id="CreateBut" text="Create" prompt="Create" disabled="${oa.TransientVO.DisableYes}" shortDesc="Create New Applicant">
+                                       <ui:primaryClientAction>
+                                          <ui:fireAction event="CreateBut" id="fireAction3"/>
+                                       </ui:primaryClientAction>
+                                    </oa:button>
+                                    <oa:button id="ExportBut" text="Export to Excel" prompt="Export to Excel">
+                                       <ui:primaryClientAction>
+                                          <ui:fireAction event="ExportBut" id="fireAction31"/>
+                                       </ui:primaryClientAction>
+                                    </oa:button>
+                                 </ui:contents>
+                              </oa:flowLayout>
+                           </ui:tableActions>
+                        </oa:table>
+                     </ui:contents>
+                  </oa:header>
+               </ui:contents>
+            </oa:header>
+         </ui:contents>
+      </oa:pageLayout>
+   </content>
+</page>

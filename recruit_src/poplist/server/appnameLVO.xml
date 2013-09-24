@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="appnameLVO"
+   BindingStyle="OracleName"
+   CustomQuery="true"
+   RowClass="oracle.apps.fnd.framework.server.OAViewRowImpl"
+   ComponentClass="xxhlp.oracle.apps.xxhlp.recruit.poplist.server.appnameLVOImpl"
+   UseGlueCode="false" >
+   <SQLQuery><![CDATA[
+select app_name
+from   xxhlp_applicants_v
+order by app_name
+   ]]></SQLQuery>
+   <DesignTime>
+      <Attr Name="_isExpertMode" Value="true" />
+      <Attr Name="_version" Value="10.1.3.41.57" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess" />
+   </DesignTime>
+   <ViewAttribute
+      Name="AppName"
+      IsPersistent="false"
+      Precision="122"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="APP_NAME"
+      Expression="APP_NAME"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="122" />
+      </DesignTime>
+   </ViewAttribute>
+</ViewObject>

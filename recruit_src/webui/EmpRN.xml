@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oa:listOfValues version="10.1.3_1312" xml:lang="en-US" xmlns:oa="http://xmlns.oracle.com/oa" xmlns:jrad="http://xmlns.oracle.com/jrad" xmlns:ui="http://xmlns.oracle.com/uix/ui" xmlns:user="http://xmlns.oracle.com/jrad/user" xmlns="http://xmlns.oracle.com/jrad" file-version="$Header$" amDefName="xxhlp.oracle.apps.xxhlp.recruit.server.applAM">
+   <ui:contents>
+      <oa:table id="region3" name="EmpRN">
+         <ui:contents>
+            <oa:messageStyledText id="empno" viewName="empLVO" viewAttr="EmpNo" queryable="true" prompt="Employee Number"/>
+            <oa:messageStyledText id="empname" queryable="true" viewName="empLVO" viewAttr="EmpName" prompt="Employee Name"/>
+            <oa:formValue id="empid" viewName="empLVO" viewAttr="EmpId" dataType="NUMBER"/>
+            <oa:formValue id="position" viewName="empLVO" viewAttr="PositionName" dataType="VARCHAR2"/>
+         </ui:contents>
+      </oa:table>
+   </ui:contents>
+</oa:listOfValues>

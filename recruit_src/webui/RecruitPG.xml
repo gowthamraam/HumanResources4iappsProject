@@ -1,0 +1,554 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<page xmlns:jrad="http://xmlns.oracle.com/jrad" xmlns:oa="http://xmlns.oracle.com/oa" xmlns:ui="http://xmlns.oracle.com/uix/ui" version="10.1.3_1312" xml:lang="en-US" xmlns:user="http://xmlns.oracle.com/jrad/user" xmlns="http://xmlns.oracle.com/jrad" file-version="$Header$">
+   <content>
+      <oa:pageLayout id="region1" controllerClass="xxhlp.oracle.apps.xxhlp.recruit.webui.RecruitCO" amDefName="xxhlp.oracle.apps.xxhlp.recruit.server.applAM" windowTitle="Recruitment" title="Applicant Details">
+         <ui:corporateBranding>
+            <oa:image id="corporateBrandingImage" source="/OA_MEDIA/FNDSSCORP.gif"/>
+         </ui:corporateBranding>
+         <ui:contents>
+            <oa:header id="perinfoRN" text="Personal Information">
+               <ui:contents>
+                  <oa:rowLayout id="row0" width="100%" hAlign="center">
+                     <ui:contents>
+                        <oa:cellFormat id="c01" width="25%">
+                           <ui:contents>
+                              <oa:messageTextInput id="apprefnum" prompt="Reference Number" viewName="applVO" viewAttr="AppRefNumber" maximumLength="60" translatableDefaultValue="-" disabled="true"/>
+                           </ui:contents>
+                        </oa:cellFormat>
+                        <oa:cellFormat id="c02" width="25%">
+                           <ui:contents>
+                              <oa:messageLovInput id="cvrefbyname" prompt="CV Referred By" columns="35" viewName="applVO" viewAttr="ReferredByName" maximumLength="240" disabled="${oa.TransientVO.DisableYes}" externalListOfValues="/xxhlp/oracle/apps/xxhlp/recruit/webui/EmpRN" unvalidated="true">
+                                 <lovMappings>
+                                    <lovMap id="lovMap7" lovItem="empname" resultTo="cvrefbyname" criteriaFrom="cvrefbyname"/>
+                                    <lovMap id="lovMap8" lovItem="empid" resultTo="cvrefby" criteriaFrom="cvrefby"/>
+                                    <lovMap id="lovMap9" lovItem="position" resultTo="posname" criteriaFrom="posname"/>
+                                 </lovMappings>
+                              </oa:messageLovInput>
+                              <oa:formValue id="cvrefby" viewName="applVO" viewAttr="ReferredBy"/>
+                           </ui:contents>
+                        </oa:cellFormat>
+                        <oa:cellFormat id="c03" width="25%">
+                           <ui:contents>
+                              <oa:messageTextInput id="posname" prompt="Position Applied For" viewName="applVO" viewAttr="PositionAppFor" maximumLength="240" columns="25"/>
+                           </ui:contents>
+                        </oa:cellFormat>
+                        <oa:cellFormat id="c04" width="25%">
+                           <ui:contents>
+                              <oa:messageTextInput id="cvrecon" prompt="CV Received On" dataType="DATE" required="yes" viewName="applVO" viewAttr="CvReceivedOn" disabled="${oa.TransientVO.DisableYes}"/>
+                           </ui:contents>
+                        </oa:cellFormat>
+                     </ui:contents>
+                  </oa:rowLayout>
+                  <oa:rowLayout id="row1" width="100%">
+                     <ui:contents>
+                        <oa:cellFormat id="c11" vAlign="top" width="45%" hAlign="left">
+                           <ui:contents>
+                              <oa:defaultDoubleColumn id="nameRN" text="Name">
+                                 <ui:contents>
+                                    <oa:messageTextInput id="lastname" prompt="Last Name" columns="25" required="yes" viewName="applVO" viewAttr="LastName" maximumLength="60" disabled="${oa.TransientVO.DisableYes}" serverUnvalidated="true"/>
+                                    <oa:messageTextInput id="idref" prompt="ID Number" columns="15" required="yes" viewName="applVO" viewAttr="IdNumber" maximumLength="240" disabled="${oa.TransientVO.DisableYes}"/>
+                                    <oa:messageTextInput id="firstname" prompt="First Name" columns="25" viewName="applVO" viewAttr="FirstName" maximumLength="60" disabled="${oa.TransientVO.DisableYes}" serverUnvalidated="true"/>
+                                    <oa:messageTextInput id="idexpdt" prompt="ID Expires On" dataType="DATE" viewName="applVO" viewAttr="IdExpDate" disabled="${oa.TransientVO.DisableYes}"/>
+                                    <oa:messageChoice id="gender" prompt="Gender" pickListDispAttr="GenderDesc" pickListValAttr="Gender" pickListViewName="genderLVO" allowBlankValue="false" required="yes" viewName="applVO" viewAttr="Gender" disabled="${oa.TransientVO.DisableYes}"/>
+                                    <oa:messageTextInput id="currsal" viewName="applVO" viewAttr="CurrSalary" columns="15" prompt="Current Salary" maximumLength="30" disabled="${oa.TransientVO.DisableYes}"/>
+                                    <oa:messageTextInput id="dob" prompt="Date of Birth" dataType="DATE" viewName="applVO" viewAttr="DateOfBirth" disabled="${oa.TransientVO.DisableYes}">
+                                       <ui:primaryClientAction>
+                                          <ui:firePartialAction event="Dob"/>
+                                       </ui:primaryClientAction>
+                                    </oa:messageTextInput>
+                                    <oa:messageTextInput id="expsal" maximumLength="30" viewName="applVO" viewAttr="ExpSalary" prompt="Expected Salary" columns="15" disabled="${oa.TransientVO.DisableYes}"/>
+                                    <oa:messageChoice id="region" prompt="Region" pickListViewName="regionLVO" pickListDispAttr="RegionDesc" pickListValAttr="Region" required="yes" viewName="applVO" viewAttr="Region" disabled="${oa.TransientVO.DisableYes}"/>
+                                 </ui:contents>
+                              </oa:defaultDoubleColumn>
+                           </ui:contents>
+                        </oa:cellFormat>
+                        <oa:cellFormat id="c12" width="10%" hAlign="left" vAlign="top"/>
+                        <oa:cellFormat id="c13" vAlign="top" width="45%" hAlign="left">
+                           <ui:contents>
+                              <oa:defaultDoubleColumn id="addressRN" text="Address">
+                                 <ui:contents>
+                                    <oa:messageTextInput id="a1" prompt="Address" columns="25" viewName="applVO" viewAttr="Address1" maximumLength="240" disabled="${oa.TransientVO.DisableYes}"/>
+                                    <oa:messageTextInput id="email" prompt="Email ID" columns="25" viewName="applVO" viewAttr="EmailId" maximumLength="240" disabled="${oa.TransientVO.DisableYes}"/>
+                                    <oa:messageTextInput id="a2" columns="25" viewName="applVO" viewAttr="Address2" maximumLength="240" disabled="${oa.TransientVO.DisableYes}"/>
+                                    <oa:messageTextInput id="contactnum" prompt="Contact Number" columns="25" required="yes" viewName="applVO" viewAttr="ContactNumber" maximumLength="240" disabled="${oa.TransientVO.DisableYes}"/>
+                                    <oa:messageTextInput id="a3" columns="25" viewName="applVO" viewAttr="Address3" maximumLength="240" disabled="${oa.TransientVO.DisableYes}"/>
+                                    <oa:spacer id="sp02"/>
+                                    <oa:messageTextInput id="city" prompt="City" columns="15" viewName="applVO" viewAttr="City" maximumLength="240" disabled="${oa.TransientVO.DisableYes}"/>
+                                    <oa:spacer id="sp04"/>
+                                    <oa:messageLovInput id="countrydescadd" prompt="Country" viewName="applVO" viewAttr="CountryDesc" disabled="${oa.TransientVO.DisableYes}">
+                                       <lovContents>
+                                          <oa:listOfValues id="region3">
+                                             <ui:contents>
+                                                <oa:table name="region3" id="countryLVO">
+                                                   <ui:contents>
+                                                      <oa:messageStyledText id="Country" dataType="VARCHAR2" prompt="Country" viewName="countryLVO" viewAttr="Country" maximumLength="2" queryable="true"/>
+                                                      <oa:messageStyledText id="CountryName" dataType="VARCHAR2" prompt="Country Name" viewName="countryLVO" viewAttr="CountryName" maximumLength="80" queryable="true"/>
+                                                   </ui:contents>
+                                                </oa:table>
+                                             </ui:contents>
+                                          </oa:listOfValues>
+                                       </lovContents>
+                                       <lovMappings>
+                                          <lovMap id="lovMap1" lovItem="CountryName" resultTo="countrydescadd" criteriaFrom="countrydescadd"/>
+                                          <lovMap id="lovMap4" lovItem="Country" resultTo="countryaddfv" criteriaFrom="countryaddfv"/>
+                                       </lovMappings>
+                                    </oa:messageLovInput>
+                                    <oa:formValue id="countryaddfv" prompt="Country" viewName="applVO" viewAttr="Country"/>
+                                 </ui:contents>
+                              </oa:defaultDoubleColumn>
+                           </ui:contents>
+                        </oa:cellFormat>
+                     </ui:contents>
+                  </oa:rowLayout>
+                  <oa:rowLayout id="row2" width="100%">
+                     <ui:contents>
+                        <oa:cellFormat id="c21" width="45%" vAlign="top" hAlign="left">
+                           <ui:contents>
+                              <oa:defaultDoubleColumn id="remarksRN" text="Remarks">
+                                 <ui:contents>
+                                    <oa:messageTextInput id="remarks" columns="65" rows="3" prompt="Remarks" viewName="applVO" viewAttr="Remarks" maximumLength="4000" disabled="${oa.TransientVO.DisableYes}"/>
+                                 </ui:contents>
+                              </oa:defaultDoubleColumn>
+                           </ui:contents>
+                        </oa:cellFormat>
+                        <oa:cellFormat id="c22" width="10%" hAlign="left" vAlign="top"/>
+                        <oa:cellFormat id="c23" width="45%" vAlign="top" hAlign="left">
+                           <ui:contents>
+                              <oa:defaultDoubleColumn id="statusRN" text="Status">
+                                 <ui:contents>
+                                    <oa:messageChoice id="status" prompt="Status" pickListViewName="appstsLVO" pickListDispAttr="AppstsDesc" pickListValAttr="Appsts" viewName="applVO" viewAttr="AppStatus" required="yes" defaultValue="APP" disabled="${oa.TransientVO.DisableYes}"/>
+                                    <oa:messageChoice id="comyn" prompt="Communicated" viewName="applVO" viewAttr="CommSent" defaultValue="N" pickListViewName="yesnoLVO" pickListDispAttr="YnDesc" pickListValAttr="Yn" disabled="${oa.TransientVO.DisableYes}"/>
+                                    <oa:messageChoice id="ropyn" prompt="ROP" pickListViewName="yesnoLVO" pickListDispAttr="YnDesc" pickListValAttr="Yn" viewName="applVO" viewAttr="RopConductCertYn" defaultValue="N" disabled="${oa.TransientVO.DisableYes}"/>
+                                    <oa:messageChoice id="commode" prompt="Comm Mode" pickListViewName="commodeLVO" pickListDispAttr="CommodeDesc" pickListValAttr="Commode" viewName="applVO" viewAttr="CommMode" disabled="${oa.TransientVO.DisableYes}"/>
+                                    <oa:messageChoice id="medyn" prompt="Medical Done?" pickListViewName="yesnoLVO" pickListDispAttr="YnDesc" pickListValAttr="Yn" viewName="applVO" viewAttr="MedicalDoneYn" defaultValue="N" disabled="${oa.TransientVO.DisableYes}"/>
+                                    <oa:messageTextInput id="empnum" maximumLength="30" prompt="Employee Number" columns="15" viewName="applVO" viewAttr="EmployeeNumber" disabled="${oa.TransientVO.DisableYes}"/>
+                                    <oa:messageStyledText id="CreatedInHr" viewName="applVO" viewAttr="CreatedInHr"/>
+                                 </ui:contents>
+                              </oa:defaultDoubleColumn>
+                           </ui:contents>
+                        </oa:cellFormat>
+                     </ui:contents>
+                  </oa:rowLayout>
+                  <oa:rowLayout id="row3" width="100%" rendered="false">
+                     <ui:contents>
+                        <oa:cellFormat id="c31" vAlign="top" width="100%" hAlign="center">
+                           <ui:contents>
+                              <oa:flex id="appldff" viewName="applVO" flexFieldAppShortName="XXHLP" flexName="XXHLP_APPLICANTS_DFF"/>
+                           </ui:contents>
+                        </oa:cellFormat>
+                     </ui:contents>
+                  </oa:rowLayout>
+               </ui:contents>
+            </oa:header>
+            <oa:header id="educationRN" text="Education Details">
+               <ui:contents>
+                  <oa:advancedTable id="edutblRN" viewName="eduVO" width="100%" viewLinkName="ApplEduVL">
+                     <ui:contents>
+                        <oa:column id="column1">
+                           <ui:columnHeader>
+                              <oa:sortableHeader id="sortableHeader1" prompt="Type"/>
+                           </ui:columnHeader>
+                           <ui:contents>
+                              <oa:messageChoice id="edutype" prompt="" viewAttr="EducationType" pickListViewName="edutypeLVO" pickListDispAttr="EdutypeDesc" pickListValAttr="Edutype" disabled="${oa.TransientVO.DisableYes}"/>
+                           </ui:contents>
+                        </oa:column>
+                        <oa:column id="column2">
+                           <ui:columnHeader>
+                              <oa:sortableHeader id="sortableHeader2" prompt="Education"/>
+                           </ui:columnHeader>
+                           <ui:contents>
+                              <oa:messageChoice id="edudegree" viewAttr="Education" pickListViewName="eduLVO" pickListDispAttr="EduDesc" pickListValAttr="Edu" disabled="${oa.TransientVO.DisableYes}"/>
+                           </ui:contents>
+                        </oa:column>
+                        <oa:column id="column3">
+                           <ui:columnHeader>
+                              <oa:sortableHeader id="sortableHeader3" prompt="Subject"/>
+                           </ui:columnHeader>
+                           <ui:contents>
+                              <oa:messageChoice id="majorsub" viewAttr="MajorSubject" pickListViewName="edusubLVO" pickListDispAttr="EdusubDesc" pickListValAttr="Edusub" disabled="${oa.TransientVO.DisableYes}"/>
+                           </ui:contents>
+                        </oa:column>
+                        <oa:column id="column4">
+                           <ui:columnHeader>
+                              <oa:sortableHeader id="sortableHeader4" prompt="College"/>
+                           </ui:columnHeader>
+                           <ui:contents>
+                              <oa:messageChoice id="college" viewAttr="College" pickListViewName="educolLVO" pickListDispAttr="CollegeDesc" pickListValAttr="College" disabled="${oa.TransientVO.DisableYes}"/>
+                           </ui:contents>
+                        </oa:column>
+                        <oa:column id="column5">
+                           <ui:columnHeader>
+                              <oa:sortableHeader id="sortableHeader5" prompt="Year"/>
+                           </ui:columnHeader>
+                           <ui:contents>
+                              <oa:messageChoice id="yearcompl" viewAttr="YearCompleted" dataType="VARCHAR2" pickListViewName="yearLVO" pickListDispAttr="Year" pickListValAttr="Year" disabled="${oa.TransientVO.DisableYes}"/>
+                           </ui:contents>
+                        </oa:column>
+                        <oa:column id="column6">
+                           <ui:columnHeader>
+                              <oa:sortableHeader id="sortableHeader6" prompt="Grade"/>
+                           </ui:columnHeader>
+                           <ui:contents>
+                              <oa:messageTextInput id="grade" viewAttr="GradePerc" columns="10" disabled="${oa.TransientVO.DisableYes}"/>
+                           </ui:contents>
+                        </oa:column>
+                        <oa:column id="column8" rendered="false">
+                           <ui:columnHeader>
+                              <oa:sortableHeader id="sortableHeader8" prompt="[..]"/>
+                           </ui:columnHeader>
+                           <ui:contents>
+                              <oa:flex id="edudff" flexFieldAppShortName="XXHLP" flexName="XXHLP_APP_EDUCATIONS_DFF"/>
+                           </ui:contents>
+                        </oa:column>
+                        <oa:column id="column7" columnDataFormat="iconButtonFormat">
+                           <ui:columnHeader>
+                              <oa:sortableHeader id="sortableHeader63" prompt="Delete"/>
+                           </ui:columnHeader>
+                           <ui:contents>
+                              <oa:image id="delEdu" source="deleteicon_enabled.gif" rendered="${oa.TransientVO.RenderYes}">
+                                 <ui:primaryClientAction>
+                                    <ui:fireAction event="delEdu">
+                                       <ui:parameters>
+                                          <ui:parameter key="AppEduId" value="${oa.eduVO.AppEduId}"/>
+                                       </ui:parameters>
+                                    </ui:fireAction>
+                                 </ui:primaryClientAction>
+                              </oa:image>
+                           </ui:contents>
+                        </oa:column>
+                     </ui:contents>
+                     <ui:footer>
+                        <oa:tableFooter id="tableFooter1">
+                           <ui:contents>
+                              <oa:button id="AddEduBut" text="Add Row" prompt="Add Row" disabled="${oa.TransientVO.DisableYes}">
+                                 <ui:primaryClientAction>
+                                    <ui:firePartialAction event="AddEduBut"/>
+                                 </ui:primaryClientAction>
+                              </oa:button>
+                           </ui:contents>
+                        </oa:tableFooter>
+                     </ui:footer>
+                  </oa:advancedTable>
+               </ui:contents>
+            </oa:header>
+            <oa:header id="expRN" text="Experience Details">
+               <ui:contents>
+                  <oa:advancedTable id="exptblRN" viewName="expVO" width="100%">
+                     <ui:contents>
+                        <oa:column id="column12">
+                           <ui:columnHeader>
+                              <oa:sortableHeader id="sortableHeader12" prompt="Company Name"/>
+                           </ui:columnHeader>
+                           <ui:contents>
+                              <oa:messageTextInput id="compname" prompt="Company Name" viewAttr="CompanyName" columns="35" disabled="${oa.TransientVO.DisableYes}"/>
+                           </ui:contents>
+                        </oa:column>
+                        <oa:column id="column22">
+                           <ui:columnHeader>
+                              <oa:sortableHeader id="sortableHeader22" prompt="Date From"/>
+                           </ui:columnHeader>
+                           <ui:contents>
+                              <oa:messageTextInput id="datefrom" viewAttr="DateFrom" columns="10" dataType="DATE" disabled="${oa.TransientVO.DisableYes}" serverUnvalidated="true">
+                                 <ui:primaryClientAction>
+                                    <ui:firePartialAction event="ExpDateFrom" unvalidated="true">
+                                       <ui:parameters>
+                                          <ui:parameter key="ExpDateFrom" value="${oa.expVO.DateFrom}"/>
+                                       </ui:parameters>
+                                    </ui:firePartialAction>
+                                 </ui:primaryClientAction>
+                              </oa:messageTextInput>
+                           </ui:contents>
+                        </oa:column>
+                        <oa:column id="column32">
+                           <ui:columnHeader>
+                              <oa:sortableHeader id="sortableHeader32" prompt="Date Upto"/>
+                           </ui:columnHeader>
+                           <ui:contents>
+                              <oa:messageTextInput id="dateupto" columns="10" viewAttr="DateUpto" dataType="DATE" disabled="${oa.TransientVO.DisableYes}">
+                                 <ui:primaryClientAction>
+                                    <ui:firePartialAction event="ExpDateUpto"/>
+                                 </ui:primaryClientAction>
+                              </oa:messageTextInput>
+                           </ui:contents>
+                        </oa:column>
+                        <oa:column id="column92">
+                           <ui:columnHeader>
+                              <oa:sortableHeader id="sortableHeader92" prompt="Exp Years"/>
+                           </ui:columnHeader>
+                           <ui:contents>
+                              <oa:messageTextInput id="expyears" columns="6" viewAttr="ExpYears" dataType="NUMBER" disabled="${oa.expVO.ExpYear}"/>
+                           </ui:contents>
+                        </oa:column>
+                        <oa:column id="column42">
+                           <ui:columnHeader>
+                              <oa:sortableHeader id="sortableHeader42" prompt="Last Position"/>
+                           </ui:columnHeader>
+                           <ui:contents>
+                              <oa:messageTextInput id="positionheld" columns="30" viewAttr="PositionHeld" disabled="${oa.TransientVO.DisableYes}"/>
+                           </ui:contents>
+                        </oa:column>
+                        <oa:column id="column52">
+                           <ui:columnHeader>
+                              <oa:sortableHeader id="sortableHeader52" prompt="Experience Type"/>
+                           </ui:columnHeader>
+                           <ui:contents>
+                              <oa:messageChoice id="exptype" viewAttr="ExpType" pickListViewName="exptypeLVO" pickListDispAttr="ExptypeDesc" pickListValAttr="Exptype" disabled="${oa.TransientVO.DisableYes}"/>
+                           </ui:contents>
+                        </oa:column>
+                        <oa:column id="column62">
+                           <ui:columnHeader>
+                              <oa:sortableHeader id="sortableHeader62" prompt="Country"/>
+                           </ui:columnHeader>
+                           <ui:contents>
+                              <oa:messageLovInput id="countrydesc" viewAttr="CountryDesc" columns="20" disabled="${oa.TransientVO.DisableYes}">
+                                 <lovContents>
+                                    <oa:listOfValues id="region4">
+                                       <ui:contents>
+                                          <oa:table name="region4" id="region5" blockSize="20">
+                                             <ui:contents>
+                                                <oa:messageStyledText id="country01" viewName="countryLVO" viewAttr="Country" queryable="true" prompt="Country"/>
+                                                <oa:messageStyledText id="countrydesc01" viewName="countryLVO" viewAttr="CountryName" queryable="true" prompt="Country Name"/>
+                                             </ui:contents>
+                                          </oa:table>
+                                       </ui:contents>
+                                    </oa:listOfValues>
+                                 </lovContents>
+                                 <lovMappings>
+                                    <lovMap id="lovMap2" lovItem="countrydesc01" resultTo="countrydesc" criteriaFrom="countrydesc"/>
+                                    <lovMap id="lovMap3" lovItem="country01" resultTo="countryfv" criteriaFrom="countryfv"/>
+                                 </lovMappings>
+                              </oa:messageLovInput>
+                              <oa:formValue id="countryfv" viewAttr="Country"/>
+                           </ui:contents>
+                        </oa:column>
+                        <oa:column id="column82" rendered="false">
+                           <ui:columnHeader>
+                              <oa:sortableHeader id="sortableHeader82" prompt="[..]"/>
+                           </ui:columnHeader>
+                           <ui:contents>
+                              <oa:flex id="expdff" flexFieldAppShortName="XXHLP" flexName="XXHLP_APP_EMPLOYMENTS_DFF"/>
+                           </ui:contents>
+                        </oa:column>
+                        <oa:column id="column72" columnDataFormat="iconButtonFormat">
+                           <ui:columnHeader>
+                              <oa:sortableHeader id="sortableHeader72" prompt="Delete"/>
+                           </ui:columnHeader>
+                           <ui:contents>
+                              <oa:image id="delExp" source="deleteicon_enabled.gif" rendered="${oa.TransientVO.RenderYes}">
+                                 <ui:primaryClientAction>
+                                    <ui:fireAction event="delExp" id="fireAction14">
+                                       <ui:parameters>
+                                          <ui:parameter key="AppEmpId" value="${oa.expVO.AppEmpId}"/>
+                                       </ui:parameters>
+                                    </ui:fireAction>
+                                 </ui:primaryClientAction>
+                              </oa:image>
+                           </ui:contents>
+                        </oa:column>
+                     </ui:contents>
+                     <ui:footer>
+                        <oa:tableFooter id="tableFooter12">
+                           <ui:contents>
+                              <oa:button id="AddExpBut" text="Add Row" prompt="Add Row" disabled="${oa.TransientVO.DisableYes}">
+                                 <ui:primaryClientAction>
+                                    <ui:firePartialAction event="AddExpBut"/>
+                                 </ui:primaryClientAction>
+                              </oa:button>
+                           </ui:contents>
+                        </oa:tableFooter>
+                     </ui:footer>
+                  </oa:advancedTable>
+               </ui:contents>
+            </oa:header>
+            <oa:header id="interRN" text="Interview Details">
+               <ui:contents>
+                  <oa:advancedTable id="intertblRN" viewName="interVO" width="100%" detailViewAttr="IntTypeDesc" childViewAttrName="AppIntId" viewLinkName="IntPanelVL1">
+                     <ui:contents>
+                        <oa:column id="column11">
+                           <ui:columnHeader>
+                              <oa:sortableHeader id="sortableHeader11" prompt="Test/Interview"/>
+                           </ui:columnHeader>
+                           <ui:contents>
+                              <oa:messageChoice id="inttype" prompt="Test/Interview" viewAttr="IntType" pickListViewName="inttypeLVO" pickListDispAttr="InttypeDesc" pickListValAttr="Inttype" disabled="${oa.TransientVO.DisableYes}" serverUnvalidated="true">
+                                 <ui:primaryClientAction>
+                                    <ui:firePartialAction event="IntType" unvalidated="true">
+                                       <ui:parameters>
+                                          <ui:parameter key="intFlag" value="${oa.interVO.IntType}"/>
+                                       </ui:parameters>
+                                    </ui:firePartialAction>
+                                 </ui:primaryClientAction>
+                              </oa:messageChoice>
+                           </ui:contents>
+                        </oa:column>
+                        <oa:column id="column21">
+                           <ui:columnHeader>
+                              <oa:sortableHeader id="sortableHeader21" prompt="Date"/>
+                           </ui:columnHeader>
+                           <ui:contents>
+                              <oa:messageTextInput id="intdate" viewAttr="IntDate" columns="10" dataType="DATE" prompt="Date" disabled="${oa.TransientVO.DisableYes}" required="yes"/>
+                           </ui:contents>
+                        </oa:column>
+                        <oa:column id="column31">
+                           <ui:columnHeader>
+                              <oa:sortableHeader id="sortableHeader31" prompt="Location"/>
+                           </ui:columnHeader>
+                           <ui:contents>
+                              <oa:messageTextInput id="intlocn" columns="25" viewAttr="IntLocation" prompt="Location" maximumLength="60" disabled="${oa.TransientVO.DisableYes}"/>
+                           </ui:contents>
+                        </oa:column>
+                        <oa:column id="column41">
+                           <ui:columnHeader>
+                              <oa:sortableHeader id="sortableHeader41" prompt="Numerical Mark"/>
+                           </ui:columnHeader>
+                           <ui:contents>
+                              <oa:messageTextInput id="nummark" columns="5" viewAttr="NumericalMarks" dataType="NUMBER" prompt="Numerical Mark" maximumLength="3" disabled="${oa.interVO.Marks}" serverUnvalidated="true">
+                                 <ui:primaryClientAction>
+                                    <ui:firePartialAction event="calcMarks" unvalidated="true"/>
+                                 </ui:primaryClientAction>
+                              </oa:messageTextInput>
+                           </ui:contents>
+                        </oa:column>
+                        <oa:column id="column51">
+                           <ui:columnHeader>
+                              <oa:sortableHeader id="sortableHeader51" prompt="English Mark"/>
+                           </ui:columnHeader>
+                           <ui:contents>
+                              <oa:messageTextInput id="engmark" columns="5" viewAttr="EnglishMarks" dataType="NUMBER" prompt="English Mark" maximumLength="3" disabled="${oa.interVO.Marks}" serverUnvalidated="true">
+                                 <ui:primaryClientAction>
+                                    <ui:firePartialAction event="calcMarks" unvalidated="true"/>
+                                 </ui:primaryClientAction>
+                              </oa:messageTextInput>
+                           </ui:contents>
+                        </oa:column>
+                        <oa:column id="column61">
+                           <ui:columnHeader>
+                              <oa:sortableHeader id="sortableHeader61" prompt="Essay Mark"/>
+                           </ui:columnHeader>
+                           <ui:contents>
+                              <oa:messageTextInput id="essaymark" viewAttr="EssayMarks" columns="5" dataType="NUMBER" prompt="Essay Mark" maximumLength="3" disabled="${oa.interVO.Marks}" serverUnvalidated="true">
+                                 <ui:primaryClientAction>
+                                    <ui:firePartialAction event="calcMarks" unvalidated="true"/>
+                                 </ui:primaryClientAction>
+                              </oa:messageTextInput>
+                           </ui:contents>
+                        </oa:column>
+                        <oa:column id="column71">
+                           <ui:columnHeader>
+                              <oa:sortableHeader id="sortableHeader71" prompt="Total Marks"/>
+                           </ui:columnHeader>
+                           <ui:contents>
+                              <oa:messageTextInput id="totmark" dataType="NUMBER" viewAttr="TotalMarks" columns="5" prompt="Total Mark" maximumLength="3" disabled="${oa.interVO.TotalMark}"/>
+                           </ui:contents>
+                        </oa:column>
+                        <oa:column id="column81">
+                           <ui:columnHeader>
+                              <oa:sortableHeader id="sortableHeader81" prompt="Result"/>
+                           </ui:columnHeader>
+                           <ui:contents>
+                              <oa:messageChoice id="intresult" dataType="VARCHAR2" viewAttr="Result" pickListViewName="intresLVO" pickListDispAttr="IntresDesc" pickListValAttr="Intres" prompt="Result" disabled="${oa.TransientVO.DisableYes}"/>
+                           </ui:contents>
+                        </oa:column>
+                        <oa:column id="column102" rendered="false">
+                           <ui:columnHeader>
+                              <oa:sortableHeader id="sortableHeader821" prompt="[..]"/>
+                           </ui:columnHeader>
+                           <ui:contents>
+                              <oa:flex id="interdff" flexFieldAppShortName="XXHLP" flexName="XXHLP_APP_INTERVIEWS_DFF"/>
+                           </ui:contents>
+                        </oa:column>
+                        <oa:column id="column91" columnDataFormat="iconButtonFormat">
+                           <ui:columnHeader>
+                              <oa:sortableHeader id="sortableHeader91" prompt="Panel"/>
+                           </ui:columnHeader>
+                           <ui:contents>
+                              <oa:messageComponentLayout id="region2">
+                                 <ui:contents>
+                                    <oa:messageLayout id="messageLayout1">
+                                       <ui:contents>
+                                          <oa:image id="PanelBut" source="firstn_status.gif">
+                                             <ui:primaryClientAction>
+                                                <ui:fireAction event="PanelBut">
+                                                   <ui:parameters>
+                                                      <ui:parameter key="AppIntId" value="${oa.interVO.AppIntId}"/>
+                                                      <ui:parameter key="QryAppId" value="${oa.interVO.AppId}"/>
+                                                   </ui:parameters>
+                                                </ui:fireAction>
+                                             </ui:primaryClientAction>
+                                          </oa:image>
+                                       </ui:contents>
+                                    </oa:messageLayout>
+                                 </ui:contents>
+                              </oa:messageComponentLayout>
+                           </ui:contents>
+                        </oa:column>
+                        <oa:column id="column101" columnDataFormat="iconButtonFormat">
+                           <ui:columnHeader>
+                              <oa:sortableHeader id="sortableHeader101" prompt="Delete"/>
+                           </ui:columnHeader>
+                           <ui:contents>
+                              <oa:image id="delInt" source="deleteicon_enabled.gif" rendered="${oa.TransientVO.RenderYes}">
+                                 <ui:primaryClientAction>
+                                    <ui:fireAction event="delInt" id="fireAction141">
+                                       <ui:parameters>
+                                          <ui:parameter key="AppIntId" value="${oa.interVO.AppIntId}"/>
+                                       </ui:parameters>
+                                    </ui:fireAction>
+                                 </ui:primaryClientAction>
+                              </oa:image>
+                           </ui:contents>
+                        </oa:column>
+                     </ui:contents>
+                     <ui:footer>
+                        <oa:tableFooter id="tableFooter11">
+                           <ui:contents>
+                              <oa:button id="AddInterBut" text="Add Row" prompt="Add Row" disabled="${oa.TransientVO.DisableYes}">
+                                 <ui:primaryClientAction>
+                                    <ui:firePartialAction event="AddInterBut"/>
+                                 </ui:primaryClientAction>
+                              </oa:button>
+                           </ui:contents>
+                        </oa:tableFooter>
+                     </ui:footer>
+                  </oa:advancedTable>
+               </ui:contents>
+            </oa:header>
+            <oa:rowLayout id="buttonsRN" width="100%">
+               <ui:contents>
+                  <oa:cellFormat id="bc01" width="85%"/>
+                  <oa:cellFormat id="bc97" width="5%">
+                     <ui:contents>
+                        <oa:button id="CreateEmpBut" disabled="${oa.TransientVO.DisableYes}" text="Create Employee" prompt="Create Employee" shortDesc="Create Employee in HR System" rendered="false">
+                           <ui:primaryClientAction>
+                              <ui:fireAction event="CreateEmpBut" id="fireAction142">
+                                 <ui:parameters>
+                                    <ui:parameter key="AppId" value="${oa.applVO.AppId}"/>
+                                 </ui:parameters>
+                              </ui:fireAction>
+                           </ui:primaryClientAction>
+                        </oa:button>
+                     </ui:contents>
+                  </oa:cellFormat>
+                  <oa:cellFormat id="bc98" width="5%">
+                     <ui:contents>
+                        <oa:button id="saveBut" text="Save" prompt="Save" disabled="${oa.TransientVO.DisableYes}">
+                           <ui:primaryClientAction>
+                              <ui:fireAction event="saveBut" id="fireAction13"/>
+                           </ui:primaryClientAction>
+                        </oa:button>
+                     </ui:contents>
+                  </oa:cellFormat>
+                  <oa:cellFormat id="bc99" width="5%">
+                     <ui:contents>
+                        <oa:button id="cancelBut" text="Cancel" prompt="Cancel" serverUnvalidated="true">
+                           <ui:primaryClientAction>
+                              <ui:fireAction event="cancelBut" unvalidated="true"/>
+                           </ui:primaryClientAction>
+                        </oa:button>
+                     </ui:contents>
+                  </oa:cellFormat>
+               </ui:contents>
+            </oa:rowLayout>
+         </ui:contents>
+      </oa:pageLayout>
+   </content>
+</page>

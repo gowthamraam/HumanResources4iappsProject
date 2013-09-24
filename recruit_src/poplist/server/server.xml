@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboPackage SYSTEM "jbo_03_01.dtd">
+
+<JboPackage
+   Name="server"
+   SeparateXMLFiles="true"
+   PackageName="xxhlp.oracle.apps.xxhlp.recruit.poplist.server" >
+   <DesignTime>
+      <Attr Name="_ejbPackage" Value="false" />
+      <Attr Name="_version" Value="10.1.3.41.57" />
+   </DesignTime>
+   <Containee
+      Name="appnameLVO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.poplist.server.appnameLVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="apprefnumLVO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.poplist.server.apprefnumLVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="appstatusLVO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.poplist.server.appstatusLVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="appstsLVO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.poplist.server.appstsLVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="commodeLVO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.poplist.server.commodeLVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="countryLVO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.poplist.server.countryLVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="educolLVO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.poplist.server.educolLVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="eduLVO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.poplist.server.eduLVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="edusubLVO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.poplist.server.edusubLVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="edutypeLVO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.poplist.server.edutypeLVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="empLVO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.poplist.server.empLVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="exptypeLVO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.poplist.server.exptypeLVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="genderLVO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.poplist.server.genderLVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="intresLVO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.poplist.server.intresLVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="intstsLVO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.poplist.server.intstsLVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="inttypeLVO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.poplist.server.inttypeLVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="posapplLVO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.poplist.server.posapplLVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="regionLVO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.poplist.server.regionLVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="repoptLVO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.poplist.server.repoptLVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="yearLVO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.poplist.server.yearLVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="yesnoLVO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.poplist.server.yesnoLVO"
+      ObjectType="ViewObject" >
+   </Containee>
+</JboPackage>

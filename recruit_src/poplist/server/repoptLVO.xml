@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="repoptLVO"
+   BindingStyle="OracleName"
+   CustomQuery="true"
+   RowClass="oracle.apps.fnd.framework.server.OAViewRowImpl"
+   ComponentClass="xxhlp.oracle.apps.xxhlp.recruit.poplist.server.repoptLVOImpl"
+   UseGlueCode="false" >
+   <SQLQuery><![CDATA[
+select 'REG' rep_opt, 'Region wise' rep_opt_desc
+from dual
+union
+select 'EDU' rep_opt, 'Education wise' rep_opt_desc
+from dual
+union
+select 'CRD' rep_opt, 'Created Date wise' rep_opt_desc
+from dual
+union
+select 'RCD' rep_opt, 'Received Date wise' rep_opt_desc
+from dual
+   ]]></SQLQuery>
+   <DesignTime>
+      <Attr Name="_isExpertMode" Value="true" />
+      <Attr Name="_version" Value="10.1.3.41.57" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess" />
+   </DesignTime>
+   <ViewAttribute
+      Name="RepOpt"
+      IsPersistent="false"
+      Precision="3"
+      Type="java.lang.String"
+      ColumnType="CHAR"
+      AliasName="REP_OPT"
+      Expression="REP_OPT"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="3" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RepOptDesc"
+      IsPersistent="false"
+      Precision="18"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="REP_OPT_DESC"
+      Expression="REP_OPT_DESC"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="18" />
+      </DesignTime>
+   </ViewAttribute>
+</ViewObject>

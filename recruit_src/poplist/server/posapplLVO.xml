@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="posapplLVO"
+   BindingStyle="OracleName"
+   CustomQuery="true"
+   RowClass="oracle.apps.fnd.framework.server.OAViewRowImpl"
+   ComponentClass="xxhlp.oracle.apps.xxhlp.recruit.poplist.server.posapplLVOImpl"
+   UseGlueCode="false" >
+   <SQLQuery><![CDATA[
+select lookup_code pos_appl, meaning ||' - '||description pos_appl_desc
+from   fnd_lookup_values
+where  lookup_type = 'XXHLP_POSITIONS'
+order by lookup_code
+   ]]></SQLQuery>
+   <DesignTime>
+      <Attr Name="_isExpertMode" Value="true" />
+      <Attr Name="_version" Value="10.1.3.41.57" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess" />
+   </DesignTime>
+   <ViewAttribute
+      Name="PosAppl"
+      IsPersistent="false"
+      IsNotNull="true"
+      Precision="30"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="POS_APPL"
+      Expression="POS_APPL"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="PosApplDesc"
+      IsPersistent="false"
+      Precision="323"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="POS_APPL_DESC"
+      Expression="POS_APPL_DESC"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="323" />
+      </DesignTime>
+   </ViewAttribute>
+</ViewObject>

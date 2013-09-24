@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboPackage SYSTEM "jbo_03_01.dtd">
+
+<JboPackage
+   Name="server"
+   SeparateXMLFiles="true"
+   PackageName="xxhlp.oracle.apps.xxhlp.recruit.server" >
+   <DesignTime>
+      <Attr Name="_ejbPackage" Value="false" />
+      <Attr Name="_version" Value="10.1.3.41.57" />
+   </DesignTime>
+   <Containee
+      Name="applAM"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.server.applAM"
+      ObjectType="AppModule" >
+   </Containee>
+   <Containee
+      Name="ApplEduVL"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.server.ApplEduVL"
+      ObjectType="ViewLink" >
+   </Containee>
+   <Containee
+      Name="ApplExpVL"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.server.ApplExpVL"
+      ObjectType="ViewLink" >
+   </Containee>
+   <Containee
+      Name="applFullVO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.server.applFullVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="ApplInterVL"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.server.ApplInterVL"
+      ObjectType="ViewLink" >
+   </Containee>
+   <Containee
+      Name="applVO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.server.applVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="eduVO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.server.eduVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="expVO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.server.expVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="interVO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.server.interVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="IntPanelVL"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.server.IntPanelVL"
+      ObjectType="ViewLink" >
+   </Containee>
+   <Containee
+      Name="panelVO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.server.panelVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="TransientVO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.server.TransientVO"
+      ObjectType="ViewObject" >
+   </Containee>
+</JboPackage>

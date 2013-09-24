@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+
+<ViewLink
+   Name="ApplEduVL" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.41.57" />
+   </DesignTime>
+   <ViewLinkDefEnd
+      Name="applVO"
+      Cardinality="1"
+      Owner="xxhlp.oracle.apps.xxhlp.recruit.server.applVO"
+      Source="true" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxhlp.oracle.apps.xxhlp.recruit.server.applVO.AppId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_finderName" Value="applVO" />
+         <Attr Name="_isUpdateable" Value="true" />
+      </DesignTime>
+   </ViewLinkDefEnd>
+   <ViewLinkDefEnd
+      Name="eduVO"
+      Cardinality="-1"
+      Owner="xxhlp.oracle.apps.xxhlp.recruit.server.eduVO" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxhlp.oracle.apps.xxhlp.recruit.server.eduVO.AppId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_finderName" Value="eduVO" />
+         <Attr Name="_isUpdateable" Value="true" />
+      </DesignTime>
+   </ViewLinkDefEnd>
+</ViewLink>

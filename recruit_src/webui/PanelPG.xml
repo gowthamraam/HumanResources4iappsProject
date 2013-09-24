@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<page xmlns:jrad="http://xmlns.oracle.com/jrad" xmlns:oa="http://xmlns.oracle.com/oa" xmlns:ui="http://xmlns.oracle.com/uix/ui" version="10.1.3_1312" xml:lang="en-US" xmlns:user="http://xmlns.oracle.com/jrad/user" xmlns="http://xmlns.oracle.com/jrad" file-version="$Header$">
+   <content>
+      <oa:pageLayout id="region1" amDefName="xxhlp.oracle.apps.xxhlp.recruit.server.applAM" windowTitle="Interview Panels" title="Panel Members" controllerClass="xxhlp.oracle.apps.xxhlp.recruit.webui.PanelCO">
+         <ui:corporateBranding>
+            <oa:image id="corporateBrandingImage" source="/OA_MEDIA/FNDSSCORP.gif"/>
+         </ui:corporateBranding>
+         <ui:contents>
+            <oa:header id="panelRN1" text="">
+               <ui:contents>
+                  <oa:rowLayout id="AppDisp" width="100%" hAlign="center" vAlign="middle">
+                     <ui:contents>
+                        <oa:cellFormat id="c1" width="45%" hAlign="right" vAlign="middle">
+                           <ui:contents>
+                              <oa:messageStyledText id="refnumdisp" maximumLength="60" prompt="Reference Number"/>
+                           </ui:contents>
+                        </oa:cellFormat>
+                        <oa:cellFormat id="c2" hAlign="center" vAlign="middle" width="10%"/>
+                        <oa:cellFormat id="c3" width="45%" hAlign="left" vAlign="middle">
+                           <ui:contents>
+                              <oa:messageStyledText id="appnamedisp" prompt="Applicant Name"/>
+                           </ui:contents>
+                        </oa:cellFormat>
+                     </ui:contents>
+                  </oa:rowLayout>
+                  <oa:spacer id="sp01" height="5"/>
+                  <oa:advancedTable id="paneltblRN" viewName="panelVO" width="100%">
+                     <ui:contents>
+                        <oa:column id="column1" width="30%">
+                           <ui:columnHeader>
+                              <oa:sortableHeader id="sortableHeader1" prompt="Person Name"/>
+                           </ui:columnHeader>
+                           <ui:contents>
+                              <oa:messageLovInput id="personname" viewAttr="PersonName" columns="40" unvalidated="true" externalListOfValues="/xxhlp/oracle/apps/xxhlp/recruit/webui/EmpRN" queryable="true" disabled="${oa.TransientVO.DisableYes}">
+                                 <lovMappings>
+                                    <lovMap id="lovMap1" lovItem="empname" resultTo="personname" criteriaFrom="personname"/>
+                                    <lovMap id="lovMap2" lovItem="empid" resultTo="personid" criteriaFrom="personid"/>
+                                 </lovMappings>
+                              </oa:messageLovInput>
+                              <oa:formValue id="personid" viewAttr="PersonId"/>
+                           </ui:contents>
+                        </oa:column>
+                        <oa:column id="column2" width="60%">
+                           <ui:columnHeader>
+                              <oa:sortableHeader id="sortableHeader2" prompt="Remarks"/>
+                           </ui:columnHeader>
+                           <ui:contents>
+                              <oa:messageTextInput id="remarks" viewAttr="Remarks" columns="100" disabled="${oa.TransientVO.DisableYes}"/>
+                           </ui:contents>
+                        </oa:column>
+                        <oa:column id="column4" rendered="false">
+                           <ui:columnHeader>
+                              <oa:sortableHeader id="sortableHeader821" prompt="[..]"/>
+                           </ui:columnHeader>
+                           <ui:contents>
+                              <oa:flex id="paneldff" flexFieldAppShortName="XXHLP" flexName="XXHLP_APP_INT_PANELS_DFF"/>
+                           </ui:contents>
+                        </oa:column>
+                        <oa:column id="column3" width="10%" columnDataFormat="iconButtonFormat">
+                           <ui:columnHeader>
+                              <oa:sortableHeader id="sortableHeader3" prompt="Delete"/>
+                           </ui:columnHeader>
+                           <ui:contents>
+                              <oa:image id="DelPanel" source="deleteicon_enabled.gif" rendered="${oa.TransientVO.RenderYes}">
+                                 <ui:primaryClientAction>
+                                    <ui:fireAction event="DelPanel">
+                                       <ui:parameters>
+                                          <ui:parameter key="IntPanelId" value="${oa.panelVO.IntPanelId}"/>
+                                       </ui:parameters>
+                                    </ui:fireAction>
+                                 </ui:primaryClientAction>
+                              </oa:image>
+                           </ui:contents>
+                        </oa:column>
+                     </ui:contents>
+                     <ui:footer>
+                        <oa:tableFooter id="tableFooter1">
+                           <ui:contents>
+                              <oa:button id="AddPanelBut" text="Add Row" use="/oracle/apps/fnd/attributesets/Buttons/AddAnotherRow" prompt="Add Row" disabled="${oa.TransientVO.DisableYes}">
+                                 <ui:primaryClientAction>
+                                    <ui:firePartialAction event="AddPanelBut"/>
+                                 </ui:primaryClientAction>
+                              </oa:button>
+                              <oa:button id="PanelBackBut" text="Back" use="/oracle/apps/fnd/attributesets/Buttons/AddAnotherRow" prompt="Back" destination="">
+                                 <ui:primaryClientAction>
+                                    <ui:fireAction event="PanelBackBut"/>
+                                 </ui:primaryClientAction>
+                              </oa:button>
+                           </ui:contents>
+                        </oa:tableFooter>
+                     </ui:footer>
+                  </oa:advancedTable>
+               </ui:contents>
+            </oa:header>
+         </ui:contents>
+      </oa:pageLayout>
+   </content>
+</page>

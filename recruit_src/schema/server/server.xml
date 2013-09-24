@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboPackage SYSTEM "jbo_03_01.dtd">
+
+<JboPackage
+   Name="server"
+   SeparateXMLFiles="true"
+   PackageName="xxhlp.oracle.apps.xxhlp.recruit.schema.server" >
+   <DesignTime>
+      <Attr Name="_ejbPackage" Value="false" />
+      <Attr Name="_version" Value="10.1.3.41.57" />
+   </DesignTime>
+   <Containee
+      Name="applEO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.schema.server.applEO"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="applVAM"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.schema.server.applVAM"
+      ObjectType="AppModule" >
+   </Containee>
+   <Containee
+      Name="eduEO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.schema.server.eduEO"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="expEO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.schema.server.expEO"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="interEO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.schema.server.interEO"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="panelEO"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.schema.server.panelEO"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="XxhlpAppEducationsFk01Assoc"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.schema.server.XxhlpAppEducationsFk01Assoc"
+      ObjectType="Association" >
+   </Containee>
+   <Containee
+      Name="XxhlpAppEmploymentsFk01Assoc"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.schema.server.XxhlpAppEmploymentsFk01Assoc"
+      ObjectType="Association" >
+   </Containee>
+   <Containee
+      Name="XxhlpAppInterviewsFk01Assoc"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.schema.server.XxhlpAppInterviewsFk01Assoc"
+      ObjectType="Association" >
+   </Containee>
+   <Containee
+      Name="XxhlpAppIntPanelsFk01Assoc"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.schema.server.XxhlpAppIntPanelsFk01Assoc"
+      ObjectType="Association" >
+   </Containee>
+   <Containee
+      Name="XxhlpAppIntPanelsFk02Assoc"
+      FullName="xxhlp.oracle.apps.xxhlp.recruit.schema.server.XxhlpAppIntPanelsFk02Assoc"
+      ObjectType="Association" >
+   </Containee>
+</JboPackage>

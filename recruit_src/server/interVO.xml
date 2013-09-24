@@ -1,0 +1,317 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="interVO"
+   BindingStyle="OracleName"
+   CustomQuery="true"
+   RowClass="oracle.apps.fnd.framework.server.OAViewRowImpl"
+   ComponentClass="xxhlp.oracle.apps.xxhlp.recruit.server.interVOImpl"
+   UseGlueCode="false" >
+   <Properties>
+      <Property Name ="VO_ATTR.panelVO.VO_DATATYPE" Value ="Number" />
+      <Property Name ="VO_ATTR.panelVO.VO_QUALIFIED_NAME" Value ="Number" />
+   </Properties>
+   <SQLQuery><![CDATA[
+select
+ row_id
+,app_int_id
+,app_id
+,int_type
+,int_type_desc
+,int_date
+,int_location
+,numerical_marks
+,english_marks
+,essay_marks
+,total_marks
+,result
+,result_desc
+,attribute_category
+,attribute1
+,attribute2
+,attribute3
+,attribute4
+,attribute5
+,attribute6
+,attribute7
+,attribute8
+,attribute9
+,attribute10
+,attribute11
+,attribute12
+,attribute13
+,attribute14
+,attribute15
+,created_by
+,creation_date
+,last_updated_by
+,last_update_date
+,last_update_login
+from xxhlp_app_interviews_v
+where 1 = 1
+   ]]></SQLQuery>
+   <DesignTime>
+      <Attr Name="_isExpertMode" Value="true" />
+      <Attr Name="_version" Value="10.1.3.41.57" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess" />
+   </DesignTime>
+   <EntityUsage
+      Name="interEO"
+      Entity="xxhlp.oracle.apps.xxhlp.recruit.schema.server.interEO" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="RowId1"
+      IsPersistent="false"
+      IsNotNull="true"
+      Type="oracle.jbo.domain.RowID"
+      ColumnType="ROWID"
+      AliasName="ROW_ID"
+      Expression="ROW_ID"
+      SQLType="ROWID" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="1" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="AppIntId"
+      EntityAttrName="AppIntId"
+      EntityUsage="interEO"
+      AliasName="APP_INT_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="AppId"
+      EntityAttrName="AppId"
+      EntityUsage="interEO"
+      AliasName="APP_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="IntType"
+      EntityAttrName="IntType"
+      EntityUsage="interEO"
+      AliasName="INT_TYPE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="IntTypeDesc"
+      IsPersistent="false"
+      IsNotNull="true"
+      Precision="80"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="INT_TYPE_DESC"
+      Expression="INT_TYPE_DESC"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="IntDate"
+      EntityAttrName="IntDate"
+      EntityUsage="interEO"
+      AliasName="INT_DATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="IntLocation"
+      EntityAttrName="IntLocation"
+      EntityUsage="interEO"
+      AliasName="INT_LOCATION" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="NumericalMarks"
+      EntityAttrName="NumericalMarks"
+      EntityUsage="interEO"
+      AliasName="NUMERICAL_MARKS" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="EnglishMarks"
+      EntityAttrName="EnglishMarks"
+      EntityUsage="interEO"
+      AliasName="ENGLISH_MARKS" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="EssayMarks"
+      EntityAttrName="EssayMarks"
+      EntityUsage="interEO"
+      AliasName="ESSAY_MARKS" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="TotalMarks"
+      EntityAttrName="TotalMarks"
+      EntityUsage="interEO"
+      AliasName="TOTAL_MARKS" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Result"
+      EntityAttrName="Result"
+      EntityUsage="interEO"
+      AliasName="RESULT" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ResultDesc"
+      IsPersistent="false"
+      IsNotNull="true"
+      Precision="80"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="RESULT_DESC"
+      Expression="RESULT_DESC"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="AttributeCategory"
+      EntityAttrName="AttributeCategory"
+      EntityUsage="interEO"
+      AliasName="ATTRIBUTE_CATEGORY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute1"
+      EntityAttrName="Attribute1"
+      EntityUsage="interEO"
+      AliasName="ATTRIBUTE1" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute2"
+      EntityAttrName="Attribute2"
+      EntityUsage="interEO"
+      AliasName="ATTRIBUTE2" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute3"
+      EntityAttrName="Attribute3"
+      EntityUsage="interEO"
+      AliasName="ATTRIBUTE3" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute4"
+      EntityAttrName="Attribute4"
+      EntityUsage="interEO"
+      AliasName="ATTRIBUTE4" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute5"
+      EntityAttrName="Attribute5"
+      EntityUsage="interEO"
+      AliasName="ATTRIBUTE5" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute6"
+      EntityAttrName="Attribute6"
+      EntityUsage="interEO"
+      AliasName="ATTRIBUTE6" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute7"
+      EntityAttrName="Attribute7"
+      EntityUsage="interEO"
+      AliasName="ATTRIBUTE7" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute8"
+      EntityAttrName="Attribute8"
+      EntityUsage="interEO"
+      AliasName="ATTRIBUTE8" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute9"
+      EntityAttrName="Attribute9"
+      EntityUsage="interEO"
+      AliasName="ATTRIBUTE9" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute10"
+      EntityAttrName="Attribute10"
+      EntityUsage="interEO"
+      AliasName="ATTRIBUTE10" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute11"
+      EntityAttrName="Attribute11"
+      EntityUsage="interEO"
+      AliasName="ATTRIBUTE11" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute12"
+      EntityAttrName="Attribute12"
+      EntityUsage="interEO"
+      AliasName="ATTRIBUTE12" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute13"
+      EntityAttrName="Attribute13"
+      EntityUsage="interEO"
+      AliasName="ATTRIBUTE13" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute14"
+      EntityAttrName="Attribute14"
+      EntityUsage="interEO"
+      AliasName="ATTRIBUTE14" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute15"
+      EntityAttrName="Attribute15"
+      EntityUsage="interEO"
+      AliasName="ATTRIBUTE15" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="CreatedBy"
+      EntityAttrName="CreatedBy"
+      EntityUsage="interEO"
+      AliasName="CREATED_BY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="CreationDate"
+      EntityAttrName="CreationDate"
+      EntityUsage="interEO"
+      AliasName="CREATION_DATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LastUpdatedBy"
+      EntityAttrName="LastUpdatedBy"
+      EntityUsage="interEO"
+      AliasName="LAST_UPDATED_BY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LastUpdateDate"
+      EntityAttrName="LastUpdateDate"
+      EntityUsage="interEO"
+      AliasName="LAST_UPDATE_DATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LastUpdateLogin"
+      EntityAttrName="LastUpdateLogin"
+      EntityUsage="interEO"
+      AliasName="LAST_UPDATE_LOGIN" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Marks"
+      IsSelected="false"
+      IsPersistent="false"
+      Type="java.lang.Boolean"
+      ColumnType="NUMBER"
+      AliasName="VIEW_ATTR"
+      SQLType="BIT" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="TotalMark"
+      IsSelected="false"
+      IsPersistent="false"
+      Type="java.lang.Boolean"
+      ColumnType="NUMBER"
+      AliasName="VIEW_ATTR"
+      SQLType="BIT" >
+   </ViewAttribute>
+   <ViewLinkAccessor
+      Name="panelVO"
+      ViewLink="xxhlp.oracle.apps.xxhlp.recruit.server.IntPanelVL"
+      Type="oracle.jbo.RowIterator"
+      IsUpdateable="false" >
+   </ViewLinkAccessor>
+</ViewObject>

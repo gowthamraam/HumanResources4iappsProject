@@ -1,0 +1,114 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<page xmlns:jrad="http://xmlns.oracle.com/jrad" xmlns:oa="http://xmlns.oracle.com/oa" xmlns:ui="http://xmlns.oracle.com/uix/ui" version="10.1.3_1312" xml:lang="en-US" xmlns:user="http://xmlns.oracle.com/jrad/user" xmlns="http://xmlns.oracle.com/jrad" file-version="$Header$">
+   <content>
+      <oa:pageLayout id="ParamRN" amDefName="xxhlp.oracle.apps.xxhlp.recruit.server.applAM" windowTitle="Recruitment - Reports" title="Parameters" controllerClass="xxhlp.oracle.apps.xxhlp.recruit.webui.ReportCO">
+         <ui:corporateBranding>
+            <oa:image id="corporateBrandingImage" source="/OA_MEDIA/FNDSSCORP.gif"/>
+         </ui:corporateBranding>
+         <ui:contents>
+            <oa:header id="QueryRN" text="Search">
+               <ui:contents>
+                  <oa:rowLayout id="rowA" width="100%">
+                     <ui:contents>
+                        <oa:cellFormat id="A1" width="45%" hAlign="right">
+                           <ui:contents>
+                              <oa:messageTextInput id="CrDateFrom" dataType="DATE" prompt="Created From" columns="10"/>
+                           </ui:contents>
+                        </oa:cellFormat>
+                        <oa:cellFormat id="A2" width="10%"/>
+                        <oa:cellFormat id="A3" width="45%" hAlign="left">
+                           <ui:contents>
+                              <oa:messageTextInput id="CrDateTo" dataType="DATE" prompt="To" columns="10"/>
+                           </ui:contents>
+                        </oa:cellFormat>
+                     </ui:contents>
+                  </oa:rowLayout>
+                  <oa:rowLayout id="rowB" width="100%" hAlign="left" vAlign="top">
+                     <ui:contents>
+                        <oa:cellFormat id="B1" width="45%" hAlign="right">
+                           <ui:contents>
+                              <oa:messageTextInput id="RcvdDateFrom" dataType="DATE" prompt="Received From" columns="10"/>
+                           </ui:contents>
+                        </oa:cellFormat>
+                        <oa:cellFormat id="B2" width="10%"/>
+                        <oa:cellFormat id="B3" width="45%" hAlign="left">
+                           <ui:contents>
+                              <oa:messageTextInput id="RcvdDateTo" dataType="DATE" prompt="To" columns="10"/>
+                           </ui:contents>
+                        </oa:cellFormat>
+                     </ui:contents>
+                  </oa:rowLayout>
+                  <oa:rowLayout id="row03" width="100%" hAlign="left" vAlign="top">
+                     <ui:contents>
+                        <oa:cellFormat id="c0302" width="100%" hAlign="center">
+                           <ui:contents>
+                              <oa:spacer id="sp01" height="3"/>
+                              <oa:messageChoice id="Group01" prompt="Group 01" pickListValAttr="RepOpt" pickListDispAttr="RepOptDesc" pickListViewName="repoptLVO">
+                                 <ui:primaryClientAction>
+                                    <ui:firePartialAction event="Group01"/>
+                                 </ui:primaryClientAction>
+                              </oa:messageChoice>
+                              <oa:spacer id="sp012" height="3"/>
+                              <oa:messageChoice id="Group02" prompt="Group 02" pickListValAttr="RepOpt" pickListDispAttr="RepOptDesc" pickListViewName="repoptLVO" disabled="${oa.TransientVO.DisableGroup02}">
+                                 <ui:primaryClientAction>
+                                    <ui:firePartialAction event="Group02"/>
+                                 </ui:primaryClientAction>
+                              </oa:messageChoice>
+                              <oa:spacer id="sp011" height="3"/>
+                              <oa:messageChoice id="Group03" prompt="Group 03" pickListDispAttr="RepOptDesc" pickListValAttr="RepOpt" pickListViewName="repoptLVO" disabled="${oa.TransientVO.DisableGroup03}">
+                                 <ui:primaryClientAction>
+                                    <ui:firePartialAction event="Group03"/>
+                                 </ui:primaryClientAction>
+                              </oa:messageChoice>
+                              <oa:spacer id="sp013" height="3"/>
+                              <oa:messageChoice id="Group04" prompt="Group 04" pickListDispAttr="RepOptDesc" pickListValAttr="RepOpt" pickListViewName="repoptLVO" disabled="${oa.TransientVO.DisableGroup04}">
+                                 <ui:primaryClientAction>
+                                    <ui:firePartialAction event="Group04"/>
+                                 </ui:primaryClientAction>
+                              </oa:messageChoice>
+                           </ui:contents>
+                        </oa:cellFormat>
+                     </ui:contents>
+                  </oa:rowLayout>
+                  <oa:rowLayout id="row04" width="100%" hAlign="left" vAlign="top">
+                     <ui:contents>
+                        <oa:cellFormat id="c0402" width="100%" hAlign="center">
+                           <ui:contents>
+                              <oa:spacer id="sp0131" height="3"/>
+                              <oa:messageTextInput id="MinExp" prompt="Minimum Experience" maximumLength="2" columns="3">
+                                 <ui:primaryClientAction>
+                                    <ui:firePartialAction event="MinExp"/>
+                                 </ui:primaryClientAction>
+                              </oa:messageTextInput>
+                           </ui:contents>
+                        </oa:cellFormat>
+                     </ui:contents>
+                  </oa:rowLayout>
+                  <oa:rowLayout id="row99" width="100%" hAlign="left" vAlign="top">
+                     <ui:contents>
+                        <oa:cellFormat id="c9901" hAlign="end" vAlign="middle" width="5%">
+                           <ui:contents>
+                              <oa:button id="qbutgo" text="Go" prompt="Go">
+                                 <ui:primaryClientAction>
+                                    <ui:firePartialAction event="ButGo" id="firePartialAction1"/>
+                                 </ui:primaryClientAction>
+                              </oa:button>
+                           </ui:contents>
+                        </oa:cellFormat>
+                        <oa:cellFormat id="c9902" hAlign="start" vAlign="middle" width="5%">
+                           <ui:contents>
+                              <oa:button id="qbutclear" text="Clear" use="/oracle/apps/fnd/attributesets/Buttons/ClearAll" prompt="Clear">
+                                 <ui:primaryClientAction>
+                                    <ui:firePartialAction event="ButClear" id="firePartialAction2"/>
+                                 </ui:primaryClientAction>
+                              </oa:button>
+                           </ui:contents>
+                        </oa:cellFormat>
+                     </ui:contents>
+                  </oa:rowLayout>
+               </ui:contents>
+            </oa:header>
+         </ui:contents>
+      </oa:pageLayout>
+   </content>
+</page>
